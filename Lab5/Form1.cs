@@ -30,70 +30,70 @@ namespace Lab5
             
         }
 
-        private void seven_Click(object sender, EventArgs e)
+        private void Seven_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "7";
             this.textBox1.Text = input;
         }
 
-        private void eight_Click(object sender, EventArgs e)
+        private void Eight_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "8";
             this.textBox1.Text = input;
         }
 
-        private void nine_Click(object sender, EventArgs e)
+        private void Nine_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "9";
             this.textBox1.Text = input;
         }
 
-        private void four_Click(object sender, EventArgs e)
+        private void Four_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "4";
             this.textBox1.Text = input;
         }
 
-        private void five_Click(object sender, EventArgs e)
+        private void Five_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "5";
             this.textBox1.Text = input;
         }
 
-        private void six_Click(object sender, EventArgs e)
+        private void Six_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "6";
             this.textBox1.Text = input;
         }
 
-        private void one_Click(object sender, EventArgs e)
+        private void One_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "1";
             this.textBox1.Text = input;
         }
 
-        private void two_Click(object sender, EventArgs e)
+        private void Two_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "2";
             this.textBox1.Text = input;
         }
 
-        private void three_Click(object sender, EventArgs e)
+        private void Three_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "3";
             this.textBox1.Text = input;
         }
 
-        private void decPoint_Click(object sender, EventArgs e)
+        private void DecPoint_Click(object sender, EventArgs e)
         {
             if (!input.Contains("."))
             {
@@ -103,14 +103,14 @@ namespace Lab5
             }
         }
 
-        private void zero_Click(object sender, EventArgs e)
+        private void Zero_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             input += "0";
             this.textBox1.Text = input;
         }
 
-        private void negative_Click(object sender, EventArgs e)
+        private void Negative_Click(object sender, EventArgs e)
         {
             if (input == "")
             {
@@ -120,7 +120,7 @@ namespace Lab5
             }
         }
 
-        private void divBy_Click(object sender, EventArgs e)
+        private void DivBy_Click(object sender, EventArgs e)
         {
             if (input != "")
             {
@@ -133,7 +133,7 @@ namespace Lab5
             }
         }
 
-        private void mulBy_Click(object sender, EventArgs e)
+        private void MulBy_Click(object sender, EventArgs e)
         {
             if (input != "")
             {
@@ -146,7 +146,7 @@ namespace Lab5
             }
         }
 
-        private void minus_Click(object sender, EventArgs e)
+        private void Minus_Click(object sender, EventArgs e)
         {
             if (input != "")
             {
@@ -159,7 +159,7 @@ namespace Lab5
             }
         }
 
-        private void plus_Click(object sender, EventArgs e)
+        private void Plus_Click(object sender, EventArgs e)
         {
             if (input != "")
             {
@@ -172,7 +172,7 @@ namespace Lab5
             }
         }
 
-        private void equals_Click(object sender, EventArgs e)
+        private void Equals_Click(object sender, EventArgs e)
         {
             b = input;
             double numA = Convert.ToDouble(a);
@@ -217,7 +217,7 @@ namespace Lab5
             }
         }
 
-        private void clear_Click(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
             this.input = string.Empty;
@@ -226,7 +226,7 @@ namespace Lab5
             label1.Text = "";
         }
 
-        private void pi_Click(object sender, EventArgs e)
+        private void Pi_Click(object sender, EventArgs e)
         {
             a = input;
             double numA = Convert.ToDouble(a);
@@ -238,7 +238,7 @@ namespace Lab5
             input = result.ToString();
         }
 
-        private void sqrRoot_Click(object sender, EventArgs e)
+        private void SqrRoot_Click(object sender, EventArgs e)
         {
             a = input;
             double numA = Convert.ToDouble(a);
@@ -250,7 +250,7 @@ namespace Lab5
             input = result.ToString();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(listBox1.SelectedIndex == 0)
             {
@@ -269,7 +269,7 @@ namespace Lab5
             }
         }
 
-        private void convert_Click(object sender, EventArgs e)
+        private void Convert_Click(object sender, EventArgs e)
         {
             int decCount = 0;
             int count = 0;
@@ -328,9 +328,13 @@ namespace Lab5
                 }
                 textBox2.Text = val.ToString();
             }
+            else
+            {
+                textBox2.Text = "Eh, Number Lad!!";
+            }
         }
 
-        private void convClear_Click(object sender, EventArgs e)
+        private void ConvClear_Click(object sender, EventArgs e)
         {
             textBox2.Text = "0";
         }
