@@ -271,41 +271,63 @@ namespace Lab5
 
         private void convert_Click(object sender, EventArgs e)
         {
-            double val = Convert.ToDouble(textBox2.Text);
-            if(listBox1.SelectedIndex == 0)
+            int decCount = 0;
+            int count = 0;
+            for(int i = 0; i<textBox2.Text.Length; i++)
             {
-                if (radioButton1.Checked)
+                if(i == 0 && textBox2.Text[i] == '-')
                 {
-                    val = (val / 79) * 100;
+                    count++;
                 }
-                else if (radioButton2.Checked)
+                else if (textBox2.Text[i] == '.' && decCount == 0)
                 {
-                    val *= 0.79;
+                    decCount++;
+                    count++;
+                }
+                else if (Char.IsDigit(textBox2.Text[i]))
+                {
+                    count++;
                 }
             }
-            else if(listBox1.SelectedIndex == 1)
+            bool canConvert = count == textBox2.Text.Length;
+            if (canConvert)
             {
-                if (radioButton1.Checked)
+                double val = Convert.ToDouble(textBox2.Text);
+                if (listBox1.SelectedIndex == 0)
                 {
-                    val = (val - 32) * 5 / 9;
+                    if (radioButton1.Checked)
+                    {
+                        val = (val / 79) * 100;
+                    }
+                    else if (radioButton2.Checked)
+                    {
+                        val *= 0.79;
+                    }
                 }
-                else if (radioButton2.Checked)
+                else if (listBox1.SelectedIndex == 1)
                 {
-                    val = (val * 9 / 5) + 32;
+                    if (radioButton1.Checked)
+                    {
+                        val = (val - 32) * 5 / 9;
+                    }
+                    else if (radioButton2.Checked)
+                    {
+                        val = (val * 9 / 5) + 32;
+                    }
                 }
+                else if (listBox1.SelectedIndex == 2)
+                {
+                    if (radioButton1.Checked)
+                    {
+                        val *= 12;
+                    }
+                    else if (radioButton2.Checked)
+                    {
+                        val /= 12;
+                    }
+                }
+                textBox2.Text = val.ToString();
             }
-            else if(listBox1.SelectedIndex == 2)
-            {
-                if (radioButton1.Checked)
-                { 
-                    val *= 12;
-                }
-                else if (radioButton2.Checked)
-                {
-                    val /= 12;
-                }
-            }
-            textBox2.Text = val.ToString();
         }
 
         private void convClear_Click(object sender, EventArgs e)
