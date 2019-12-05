@@ -198,7 +198,7 @@
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(100, 50);
             this.button22.TabIndex = 21;
-            this.button22.Text = "(-)";
+            this.button22.Text = "+/-";
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.Negative_Click);
             // 

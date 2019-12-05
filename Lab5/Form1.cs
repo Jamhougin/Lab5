@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//James Hall
+//c00007006
+//Dec 2019
+
 namespace Lab5
 {
     public partial class Form1 : Form
@@ -112,11 +116,13 @@ namespace Lab5
 
         private void Negative_Click(object sender, EventArgs e)
         {
-            if (input == "")
-            {
-                this.textBox1.Text = "";
-                input += "-";
+            if (input != "")
+            { 
+                double negPlus = Convert.ToDouble(input);
+                negPlus = negPlus * -1;
+                input = negPlus.ToString();
                 this.textBox1.Text = input;
+
             }
         }
 
@@ -174,46 +180,49 @@ namespace Lab5
 
         private void Equals_Click(object sender, EventArgs e)
         {
-            b = input;
-            double numA = Convert.ToDouble(a);
-            double numB = Convert.ToDouble(b);
-            lab = string.Empty;
-            lab += a + op + b + "=";
-
-            if(op == '/')
+            if (input != "")
             {
-                if(numB != 0)
+                b = input;
+                double numA = Convert.ToDouble(a);
+                double numB = Convert.ToDouble(b);
+                lab = string.Empty;
+                lab += a + op + b + "=";
+
+                if (op == '/')
                 {
-                    result = numA / numB;
+                    if (numB != 0)
+                    {
+                        result = numA / numB;
+                        label1.Text = lab;
+                        textBox1.Text = result.ToString();
+                        input = result.ToString();
+                    }
+                    else
+                    {
+                        textBox1.Text = "Div by 0 error";
+                    }
+                }
+                else if (op == '*')
+                {
+                    result = numA * numB;
                     label1.Text = lab;
                     textBox1.Text = result.ToString();
                     input = result.ToString();
                 }
-                else
+                else if (op == '+')
                 {
-                    textBox1.Text = "Div by 0 error";
+                    result = numA + numB;
+                    label1.Text = lab;
+                    textBox1.Text = result.ToString();
+                    input = result.ToString();
                 }
-            }
-            else if(op == '*')
-            {
-                result = numA * numB;
-                label1.Text = lab;
-                textBox1.Text = result.ToString();
-                input = result.ToString();
-            }
-            else if (op == '+')
-            {
-                result = numA + numB;
-                label1.Text = lab;
-                textBox1.Text = result.ToString();
-                input = result.ToString();
-            }
-            else if (op == '-')
-            {
-                result = numA - numB;
-                label1.Text = lab;
-                textBox1.Text = result.ToString();
-                input = result.ToString();
+                else if (op == '-')
+                {
+                    result = numA - numB;
+                    label1.Text = lab;
+                    textBox1.Text = result.ToString();
+                    input = result.ToString();
+                }
             }
         }
 
