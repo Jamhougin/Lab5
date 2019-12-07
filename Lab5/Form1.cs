@@ -22,6 +22,7 @@ namespace Lab5
         string b = string.Empty;
         char op;
         double result = 0.0;
+        bool sumStr = false;
         public Form1()
         {
             InitializeComponent();
@@ -130,12 +131,17 @@ namespace Lab5
         {
             if (input != "")
             {
+                if (sumStr)
+                {
+                    Equals_Click(null, EventArgs.Empty);
+                }
                 a = input;
                 op = '/';
                 input = string.Empty;
                 lab = string.Empty;
                 lab += a + op;
                 label1.Text = lab;
+                sumStr = true;
             }
         }
 
@@ -143,12 +149,17 @@ namespace Lab5
         {
             if (input != "")
             {
+                if (sumStr)
+                {
+                    Equals_Click(null, EventArgs.Empty);
+                }
                 a = input;
                 op = '*';
                 input = string.Empty;
                 lab = string.Empty;
                 lab += a + op;
                 label1.Text = lab;
+                sumStr = true;
             }
         }
 
@@ -156,12 +167,17 @@ namespace Lab5
         {
             if (input != "")
             {
+                if (sumStr)
+                {
+                    Equals_Click(null, EventArgs.Empty);
+                }
                 a = input;
                 op = '-';
                 input = string.Empty;
                 lab = string.Empty;
                 lab += a + op;
                 label1.Text = lab;
+                sumStr = true;
             }
         }
 
@@ -169,12 +185,17 @@ namespace Lab5
         {
             if (input != "")
             {
+                if (sumStr)
+                {
+                    Equals_Click(null, EventArgs.Empty);
+                }
                 a = input;
                 op = '+';
                 input = string.Empty;
                 lab = string.Empty;
                 lab += a + op;
                 label1.Text = lab;
+                sumStr = true;
             }
         }
 
@@ -223,6 +244,7 @@ namespace Lab5
                     textBox1.Text = result.ToString();
                     input = result.ToString();
                 }
+                sumStr = false;
             }
         }
 
@@ -233,6 +255,7 @@ namespace Lab5
             this.a = string.Empty;
             this.b = string.Empty;
             label1.Text = "";
+            sumStr = false;
         }
 
         private void Pi_Click(object sender, EventArgs e)
