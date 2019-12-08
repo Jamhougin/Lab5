@@ -201,7 +201,9 @@ namespace Lab5
 
         private void Equals_Click(object sender, EventArgs e)
         {
-            if (input != "" && op != 'x')
+            //Following bool checks for letters in input and a caused by sqrt of negative number returning "NaN"
+            bool hasLet = !input.Any(x => char.IsLetter(x)) && !a.Any(x => char.IsLetter(x));
+            if (hasLet && input != "" && op != 'x')
             {
                 b = input;
                 double numA = Convert.ToDouble(a);
