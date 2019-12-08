@@ -22,7 +22,7 @@ namespace Lab5
         string b = string.Empty;
         char op;
         double result = 0.0;
-        bool sumStr = false;
+        bool sumStr = false;//Used to check if and operator invokes the equals onClick
         public Form1()
         {
             InitializeComponent();
@@ -214,36 +214,28 @@ namespace Lab5
                     if (numB != 0)
                     {
                         result = numA / numB;
-                        label1.Text = lab;
-                        textBox1.Text = result.ToString();
-                        input = result.ToString();
                     }
                     else
                     {
                         textBox1.Text = "Div by 0 error";
+                        return;
                     }
                 }
                 else if (op == '*')
                 {
                     result = numA * numB;
-                    label1.Text = lab;
-                    textBox1.Text = result.ToString();
-                    input = result.ToString();
                 }
                 else if (op == '+')
                 {
                     result = numA + numB;
-                    label1.Text = lab;
-                    textBox1.Text = result.ToString();
-                    input = result.ToString();
                 }
                 else if (op == '-')
                 {
                     result = numA - numB;
-                    label1.Text = lab;
-                    textBox1.Text = result.ToString();
-                    input = result.ToString();
                 }
+                label1.Text = lab;
+                textBox1.Text = result.ToString();
+                input = result.ToString();
                 sumStr = false;
             }
         }
@@ -260,26 +252,32 @@ namespace Lab5
 
         private void Pi_Click(object sender, EventArgs e)
         {
-            a = input;
-            double numA = Convert.ToDouble(a);
-            lab = string.Empty;
-            lab += "π" + a;
-            result = numA * 3.14159;
-            label1.Text = lab;
-            textBox1.Text = result.ToString();
-            input = result.ToString();
+            if (input != "")
+            {
+                a = input;
+                double numA = Convert.ToDouble(a);
+                lab = string.Empty;
+                lab += "π" + a;
+                result = numA * 3.14159;
+                label1.Text = lab;
+                textBox1.Text = result.ToString();
+                input = result.ToString();
+            }
         }
 
         private void SqrRoot_Click(object sender, EventArgs e)
         {
-            a = input;
-            double numA = Convert.ToDouble(a);
-            lab = string.Empty;
-            lab += "√" + a;
-            result = Math.Sqrt(numA);
-            label1.Text = lab;
-            textBox1.Text = result.ToString();
-            input = result.ToString();
+            if (input != "")
+            {
+                a = input;
+                double numA = Convert.ToDouble(a);
+                lab = string.Empty;
+                lab += "√" + a;
+                result = Math.Sqrt(numA);
+                label1.Text = lab;
+                textBox1.Text = result.ToString();
+                input = result.ToString();
+            }
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -305,6 +303,7 @@ namespace Lab5
         {
             int decCount = 0;
             int count = 0;
+            //Loop and following bool check string to be converted for valid double format
             for(int i = 0; i<textBox2.Text.Length; i++)
             {
                 if(i == 0 && textBox2.Text[i] == '-')
