@@ -20,7 +20,7 @@ namespace Lab5
         string lab = string.Empty;
         string a = string.Empty;
         string b = string.Empty;
-        char op;
+        char op = 'x';
         double result = 0.0;
         bool sumStr = false;//Used to check if and operator invokes the equals onClick
         public Form1()
@@ -201,7 +201,7 @@ namespace Lab5
 
         private void Equals_Click(object sender, EventArgs e)
         {
-            if (input != "")
+            if (input != "" && op != 'x')
             {
                 b = input;
                 double numA = Convert.ToDouble(a);
@@ -246,6 +246,7 @@ namespace Lab5
             this.input = string.Empty;
             this.a = string.Empty;
             this.b = string.Empty;
+            op = 'x';
             label1.Text = "";
             sumStr = false;
         }
