@@ -35,84 +35,69 @@ namespace Lab5
             
         }
 
-        private void Seven_Click(object sender, EventArgs e)
+        private void enterNum(string n)
         {
             this.textBox1.Text = "";
-            input += "7";
+            input += n;
             this.textBox1.Text = input;
+        }
+
+        private void Seven_Click(object sender, EventArgs e)
+        {
+            enterNum("7");
         }
 
         private void Eight_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "8";
-            this.textBox1.Text = input;
+            enterNum("8");
         }
 
         private void Nine_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "9";
-            this.textBox1.Text = input;
+            enterNum("9");
         }
 
         private void Four_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "4";
-            this.textBox1.Text = input;
+            enterNum("4");
         }
 
         private void Five_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "5";
-            this.textBox1.Text = input;
+            enterNum("5");
         }
 
         private void Six_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "6";
-            this.textBox1.Text = input;
+            enterNum("6");
         }
 
         private void One_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "1";
-            this.textBox1.Text = input;
+            enterNum("1");
         }
 
         private void Two_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "2";
-            this.textBox1.Text = input;
+            enterNum("2");
         }
 
         private void Three_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "3";
-            this.textBox1.Text = input;
+            enterNum("3");
         }
 
         private void DecPoint_Click(object sender, EventArgs e)
         {
             if (!input.Contains("."))
             {
-                this.textBox1.Text = "";
-                input += ".";
-                this.textBox1.Text = input;
+                enterNum(".");
             }
         }
 
         private void Zero_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text = "";
-            input += "0";
-            this.textBox1.Text = input;
+            enterNum("0");
         }
 
         private void Negative_Click(object sender, EventArgs e)
@@ -127,6 +112,17 @@ namespace Lab5
             }
         }
 
+        private void opChange(char o)
+        {
+            a = input;
+            op = o;
+            input = string.Empty;
+            lab = string.Empty;
+            lab += a + op;
+            label1.Text = lab;
+            sumStr = true;
+        }
+
         private void DivBy_Click(object sender, EventArgs e)
         {
             if (input != "")
@@ -135,13 +131,7 @@ namespace Lab5
                 {
                     Equals_Click(null, EventArgs.Empty);
                 }
-                a = input;
-                op = '/';
-                input = string.Empty;
-                lab = string.Empty;
-                lab += a + op;
-                label1.Text = lab;
-                sumStr = true;
+                opChange('/');
             }
         }
 
@@ -153,13 +143,7 @@ namespace Lab5
                 {
                     Equals_Click(null, EventArgs.Empty);
                 }
-                a = input;
-                op = '*';
-                input = string.Empty;
-                lab = string.Empty;
-                lab += a + op;
-                label1.Text = lab;
-                sumStr = true;
+                opChange('*');
             }
         }
 
@@ -171,13 +155,7 @@ namespace Lab5
                 {
                     Equals_Click(null, EventArgs.Empty);
                 }
-                a = input;
-                op = '-';
-                input = string.Empty;
-                lab = string.Empty;
-                lab += a + op;
-                label1.Text = lab;
-                sumStr = true;
+                opChange('-');
             }
         }
 
@@ -189,13 +167,7 @@ namespace Lab5
                 {
                     Equals_Click(null, EventArgs.Empty);
                 }
-                a = input;
-                op = '+';
-                input = string.Empty;
-                lab = string.Empty;
-                lab += a + op;
-                label1.Text = lab;
-                sumStr = true;
+                opChange('+');
             }
         }
 
