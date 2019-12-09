@@ -255,7 +255,8 @@ namespace Lab5
 
         private void Pi_Click(object sender, EventArgs e)
         {
-            if (input != "")
+            bool hasLet = !input.Any(x => char.IsLetter(x)) && !a.Any(x => char.IsLetter(x));
+            if (hasLet && input != "")
             {
                 a = input;
                 double numA = Convert.ToDouble(a);
@@ -270,7 +271,8 @@ namespace Lab5
 
         private void SqrRoot_Click(object sender, EventArgs e)
         {
-            if (input != "")
+            bool hasLet = !input.Any(x => char.IsLetter(x)) && !a.Any(x => char.IsLetter(x));
+            if (hasLet && input != "")
             {
                 a = input;
                 double numA = Convert.ToDouble(a);
